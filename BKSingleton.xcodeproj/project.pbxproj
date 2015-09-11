@@ -14,6 +14,7 @@
 		18EAD5841BA27CE900A2AD99 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18EAD5831BA27CE900A2AD99 /* Images.xcassets */; };
 		18EAD5871BA27CE900A2AD99 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18EAD5851BA27CE900A2AD99 /* LaunchScreen.xib */; };
 		18EAD5931BA27CEA00A2AD99 /* BKSingletonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EAD5921BA27CEA00A2AD99 /* BKSingletonTests.m */; };
+		18EAD59F1BA2824400A2AD99 /* BKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EAD59E1BA2824400A2AD99 /* BKHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,9 @@
 		18EAD58C1BA27CEA00A2AD99 /* BKSingletonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BKSingletonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18EAD5911BA27CEA00A2AD99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18EAD5921BA27CEA00A2AD99 /* BKSingletonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKSingletonTests.m; sourceTree = "<group>"; };
+		18EAD59D1BA2824400A2AD99 /* BKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKHelper.h; sourceTree = "<group>"; };
+		18EAD59E1BA2824400A2AD99 /* BKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKHelper.m; sourceTree = "<group>"; };
+		18EAD5A01BA2884000A2AD99 /* BKSingleton.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKSingleton.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 		18EAD5751BA27CE900A2AD99 /* BKSingleton */ = {
 			isa = PBXGroup;
 			children = (
+				18EAD59C1BA27CF200A2AD99 /* Helper */,
 				18EAD57A1BA27CE900A2AD99 /* AppDelegate.h */,
 				18EAD57B1BA27CE900A2AD99 /* AppDelegate.m */,
 				18EAD57D1BA27CE900A2AD99 /* ViewController.h */,
@@ -96,6 +101,7 @@
 		18EAD5761BA27CE900A2AD99 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				18EAD5A01BA2884000A2AD99 /* BKSingleton.pch */,
 				18EAD5771BA27CE900A2AD99 /* Info.plist */,
 				18EAD5781BA27CE900A2AD99 /* main.m */,
 			);
@@ -117,6 +123,15 @@
 				18EAD5911BA27CEA00A2AD99 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		18EAD59C1BA27CF200A2AD99 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				18EAD59D1BA2824400A2AD99 /* BKHelper.h */,
+				18EAD59E1BA2824400A2AD99 /* BKHelper.m */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +236,7 @@
 			files = (
 				18EAD57F1BA27CE900A2AD99 /* ViewController.m in Sources */,
 				18EAD57C1BA27CE900A2AD99 /* AppDelegate.m in Sources */,
+				18EAD59F1BA2824400A2AD99 /* BKHelper.m in Sources */,
 				18EAD5791BA27CE900A2AD99 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,6 +363,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/BKSingleton/BKSingleton.pch";
 				INFOPLIST_FILE = BKSingleton/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -357,6 +375,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/BKSingleton/BKSingleton.pch";
 				INFOPLIST_FILE = BKSingleton/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
